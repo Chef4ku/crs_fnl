@@ -58,7 +58,7 @@ class ModeloFormularios
 
     static public function mdlSelectPosts ($tabla)
     {
-        $statement = Conexion::conectar()->prepare("SELECT *, DATE_FORMAT(date, '%d/%m/%Y') AS date FROM $tabla ORDER BY date ASC");
+        $statement = Conexion::conectar()->prepare("SELECT *, DATE_FORMAT(date, '%d/%m/%Y') AS date FROM $tabla ORDER BY id DESC");
         $statement->execute();
         return $statement->fetchAll();
     }

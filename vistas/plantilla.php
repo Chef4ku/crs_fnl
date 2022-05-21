@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 ?>
 
@@ -24,29 +24,39 @@ session_start();
             </ul>
         </nav>
         <hr>
-        <section id="content">
-            <?php
-            if (isset($_GET["path"])) {
-                if (
-                    $_GET["path"] == "signup" ||
-                    $_GET["path"] == "login" ||
-                    $_GET["path"] == "inicio" ||
-                    $_GET["path"] == "editar" ||
-                    $_GET["path"] == "salir"
-                ) {
-                    include "paginas/" . $_GET["path"] . ".php";
-                } else {
-                    include "paginas/error404.php";
-                }
-            } else {
-                include "paginas/signup.php";
-            }
-            ?>
-        </section>
     </header>
+    <section id="content">
+        <?php
+        if (isset($_GET["path"])) {
+            if (
+                $_GET["path"] == "signup" ||
+                $_GET["path"] == "login" ||
+                $_GET["path"] == "inicio" ||
+                $_GET["path"] == "editar" ||
+                $_GET["path"] == "salir"
+            ) {
+                include "paginas/" . $_GET["path"] . ".php";
+            } else {
+                include "paginas/error404.php";
+            }
+        } else {
+            include "paginas/signup.php";
+        }
+        ?>
+    </section>
+
+    <br>
+    <hr>
+    <br>
+
+    <footer>
+        <span class="iconify" data-icon="logos:github-icon"></span>
+        <a href="https://github.com/Chef4ku/crs_fnl" target="_blank"> Repositorio Github</a>
+    </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="vistas/js/script.js"></script>
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
 </body>
 
 </html>

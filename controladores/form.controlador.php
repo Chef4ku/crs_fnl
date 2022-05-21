@@ -120,7 +120,7 @@ class ControladorFormularios
             isset($_POST["p_password"]) &&
             isset($_POST["p_content"])
         )) {
-            echo "ingrese todos los datos";
+            echo "Ingrese todos los datos";
         } else {
             $tabla = "registros";
             $item = "email";
